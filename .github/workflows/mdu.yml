@@ -17,7 +17,7 @@ jobs:
         run: mkdir -p build
 
       - name: Compilar o testbench
-        run: iverilog -o build/mdu_tb -s mdu_tb -g2005-sv -Irtl/core testbenchs/mdu_tb.sv rtl/core/mdu.sv
+        run: iverilog -o build/mdu_tb -s mdu_tb -g2005-sv -Irtl/core tests/mdu_tb.sv rtl/core/mdu.sv
 
       - name: Executar o testbench
         run: vvp build/mdu_tb
