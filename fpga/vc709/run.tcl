@@ -4,7 +4,7 @@ read_xdc "pinout.xdc"
 set_property PROCESSING_ORDER EARLY [get_files pinout.xdc]
 
 # synth
-synth_design -top "top" -part "xc7a100tcsg324-1"
+synth_design -top "top" -part "xc7vx690tffg1761-2"
 
 # place and route
 opt_design
@@ -16,7 +16,6 @@ report_io                        -file reports/io.rpt
 report_control_sets -verbose     -file reports/control_sets.rpt
 report_clock_utilization         -file reports/clock_utilization.rpt
 
-
 route_design
 
 report_timing_summary -no_header -no_detailed_paths
@@ -24,7 +23,6 @@ report_route_status                            -file reports/route_status.rpt
 report_drc                                     -file reports/drc.rpt
 report_timing_summary -datasheet -max_paths 10 -file reports/timing.rpt
 report_power                                   -file reports/power.rpt
-
 
 # write bitstream
 write_bitstream -force "./build/out.bit"

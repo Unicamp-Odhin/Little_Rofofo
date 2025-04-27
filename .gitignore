@@ -77,3 +77,5 @@ env/
 site/
 .vscode
 hex_to_wav
+reports/
+slpp_all/
